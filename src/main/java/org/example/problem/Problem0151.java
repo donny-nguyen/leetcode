@@ -11,10 +11,11 @@ public class Problem0151 {
         String[] words = s.split("\\s+");
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = words.length - 1; i >= 0; i--) {
+            if (words[i].length() == 0)
+                continue;
             stringBuilder.append(words[i]);
-            if(i > 0)
-                stringBuilder.append(" ");
+            stringBuilder.append(" ");
         }
-        return stringBuilder.toString();
+        return stringBuilder.toString().trim();
     }
 }

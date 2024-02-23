@@ -27,10 +27,9 @@ public class Problem0338 {
     private List<Integer> binary(int i) {
         List<Integer> bin = new ArrayList<>();
         while(i > 0){
-            int r = i / 2;
             int mod = i % 2;
             bin.add(mod);
-            i = r;
+            i /= 2;
         }
         return bin;
     }

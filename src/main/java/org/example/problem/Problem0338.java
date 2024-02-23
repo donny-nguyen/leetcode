@@ -13,6 +13,34 @@ public class Problem0338 {
     }
 
     public int[] CountBits(int n) {
-        return new int[0];
+        int[] ans = new int[n + 1];
+        for (int i = 0; i < ans.length; i++) {
+            boolean[] bin = binary(i);
+            ans[i] = countOne(bin);
+        }
+        return ans;
+    }
+
+    private boolean[] binary(int i) {
+        return new boolean[0];
+    }
+
+    private int countOne(boolean[] bin) {
+        return 0;
     }
 }
+
+// n = 2
+// ans = {_, _, _}
+// i = 0
+//      b = binary(i) = 0
+//      countOne(b) = 0
+//      ans = [0, _, _}
+// i = 1
+//      b = binary(i) = 1
+//      countOne(b) = 1
+//      ans = [0, 1, _}
+// i = 2
+//      b = binary(i) = 10
+//      countOne(b) = 1
+//      ans = [0, 1, 1}

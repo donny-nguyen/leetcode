@@ -5,17 +5,17 @@ import java.util.List;
 
 public class Problem0338 {
     public Problem0338() {
-        int[] ans = CountBits(2);
+        int[] ans = countBits(2);
         for (int i : ans)
             System.out.print(i + " ");
         System.out.println();
 
-        ans = CountBits(5);
+        ans = countBits(5);
         for (int i : ans)
             System.out.print(i + " ");
     }
 
-    public int[] CountBits(int n) {
+    public int[] countBits(int n) {
         int[] ans = new int[n + 1];
         for (int i = 0; i < ans.length; i++) {
             List<Integer> bin = binary(i);

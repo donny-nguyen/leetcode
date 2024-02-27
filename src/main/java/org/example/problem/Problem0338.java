@@ -16,20 +16,9 @@ public class Problem0338 {
     }
 
     public int[] countBits(int n) {
-        int[] ans = new int[n + 1];
-        for (int i = 0; i < ans.length; i++) {
-            ans[i] = countOne(i);
-        }
-        return ans;
-    }
-
-    private int countOne(int num) {
-        int countOne = 0;
-        while (num > 0) {
-            if ((num & 1) == 1)
-                countOne++;
-            num = num >> 1;
-        }
-        return countOne;
+        int[] f = new int[n + 1];
+        for (int i = 1; i <= n; i++)
+            f[i] = f[i >> 1] + (i & 1);
+        return f;
     }
 }

@@ -4,6 +4,6 @@ import org.example.problem.*;
 
 public class Main {
     public static void main(String[] args) {
-        new Problem0338();
+        new Problem0375();
     }
 }

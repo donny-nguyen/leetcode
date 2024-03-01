@@ -27,7 +27,8 @@ public class Problem1071 {
             return false;
 
         for (int i = 0; i < str.length(); i += devider.length()) {
-            if (str.substring(i, devider.length()).equals(devider) == false)
+            String subStringOfStr = str.substring(i, i + devider.length());
+            if (subStringOfStr.equals(devider) == false)
                 return false;
         }
 

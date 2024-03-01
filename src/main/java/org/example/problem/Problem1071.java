@@ -19,7 +19,7 @@ public class Problem1071 {
                 x = x.substring(0, x.length() - 1);
             } while (!x.isEmpty() && shorterStr.length() % x.length() != 0);
         }
-        return "";
+        return x;
     }
 
     private boolean canDevide(String str, String devider) {

@@ -9,17 +9,16 @@ public class Problem1071 {
     }
 
     public String gcdOfStrings(String str1, String str2) {
-        String x = str1.length() < str2.length() ? str1 : str2;
+        String shorterStr = str1.length() < str2.length() ? str1 : str2;
+        String x = shorterStr;
 
         while (!x.isEmpty()) {
             if (canDevide(str1, x) && canDevide(str2, x))
                 return x;
-            if (x.length() % 2 == 0)
-                x = x.substring(0, x.length() / 2);
-            else
-                return "";
+            do {
+                x = x.substring(0, x.length() - 1);
+            } while (!x.isEmpty() && shorterStr.length() % x.length() != 0);
         }
-
         return "";
     }
 

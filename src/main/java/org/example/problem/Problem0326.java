@@ -8,6 +8,14 @@ public class Problem0326 {
     }
 
     public boolean isPowerOfThree(int n) {
-        return false;
+        if (n == 0) return false;
+
+        n = Math.abs(n);
+        if (n == 1) return false;
+
+        while (n != 1 && n % 3 == 0) {
+            n /= 3;
+        }
+        return n == 1;
     }
 }

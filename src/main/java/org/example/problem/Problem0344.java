@@ -8,11 +8,19 @@ public class Problem0344 {
             System.out.print(c);
         System.out.println();
         s = new char[]{'H', 'a', 'n', 'n', 'a', 'h'};
+        reverseString(s);
         for (char c : s)
             System.out.print(c);
     }
 
     public void reverseString(char[] s) {
-
+        char temp;
+        for (int i = 0, j = s.length - 1; i < j; i++, j--) {
+            if (s[i] != s[j]) {
+                temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+            }
+        }
     }
 }

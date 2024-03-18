@@ -1,5 +1,7 @@
 package org.example.problem;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Problem0118 {
@@ -25,6 +27,19 @@ public class Problem0118 {
     }
 
     public List<List<Integer>> generate(int numRows) {
-        return null;
+        List<List<Integer>> triangle = new ArrayList<>();
+        for (int i = 0; i < numRows; i++) {
+            List<Integer> line = new ArrayList<>();
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || j == i) {
+                    line.add(1);
+                } else {
+                    Integer value = triangle.get(i - 1).get(j - 1) + triangle.get(i - 1).get(j);
+                    line.add(value);
+                }
+            }
+            triangle.add(line);
+        }
+        return triangle;
     }
 }

@@ -4,9 +4,11 @@ public class Problem0405 {
     public Problem0405() {
         System.out.println(toHex(26).equals("1a"));
         System.out.println(toHex(-1).equals("ffffffff"));
+        System.out.println(toHex(0).equals("0"));
     }
 
     public String toHex(int num) {
+        if (num == 0) return "0";
         StringBuilder stringBuilder = new StringBuilder();
         int bitCount = 32;
         while (num != 0 && bitCount != 0) {

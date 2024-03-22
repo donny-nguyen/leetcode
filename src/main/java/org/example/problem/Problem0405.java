@@ -8,11 +8,13 @@ public class Problem0405 {
 
     public String toHex(int num) {
         StringBuilder stringBuilder = new StringBuilder();
-        while (num > 0) {
+        int bitCount = 32;
+        while (num != 0 && bitCount != 0) {
             int digit = num & 0xf;
             char hexChar = digitToHexChar(digit);
             stringBuilder.append(hexChar);
             num >>= 4;
+            bitCount -= 4;
         }
         return stringBuilder.reverse().toString();
     }
@@ -31,3 +33,8 @@ public class Problem0405 {
 // digit        10              11              12
 // return       'a'             'b'             'c'
 // result       'a'+(10-10)     'a'+(11-10)     'a'+(12-10)
+
+// num          -1      1111 1111
+// 0-num        1       0000 0001
+// ^digits              1111 1110
+// ^digits+1            1111 1111

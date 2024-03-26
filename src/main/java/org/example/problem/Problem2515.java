@@ -5,7 +5,8 @@ public class Problem2515 {
         System.out.println(closetTarget(new String[]{"hello", "i", "am", "leetcode", "hello"}, "hello", 1) == 1);
         System.out.println(closetTarget(new String[]{"a", "b", "leetcode"}, "leetcode", 0) == 1);
         System.out.println(closetTarget(new String[]{"i", "eat", "leetcode"}, "ate", 0) == -1);
-        System.out.println(closetTarget(new String[]{"ibkgecmeyx","jsdkekkjsb","gdjgdtjtrs","jsdkekkjsb","jsdkekkjsb","jsdkekkjsb","gdjgdtjtrs","msjlfpawbx","pbgjhutcwb","gdjgdtjtrs"}, "pbgjhutcwb", 0) == 2);
+        System.out.println(closetTarget(new String[]{"ibkgecmeyx", "jsdkekkjsb", "gdjgdtjtrs", "jsdkekkjsb", "jsdkekkjsb", "jsdkekkjsb", "gdjgdtjtrs", "msjlfpawbx", "pbgjhutcwb", "gdjgdtjtrs"}, "pbgjhutcwb", 0) == 2);
+        System.out.println(closetTarget(new String[]{"sjwjixunvm", "dpdykpuuen", "medqhltelb", "aoqabahtfx", "medqhltelb", "aoqabahtfx", "zgcmtppupi", "pgkzblegek", "zgcmtppupi", "rzwefukfpm"}, "vqjqatovzh", 4) == -1);
     }
 
     public int closetTarget(String[] words, String target, int startIndex) {
@@ -15,6 +16,8 @@ public class Problem2515 {
         int loopCount = words.length / 2;
         for (int i = 0, j = (startIndex + 1) % words.length, k = (startIndex - 1 + words.length) % words.length; i < loopCount; i++, j++, k--) {
             shortestDistance++;
+            if (j >= words.length) j = 0;
+            if (k < 0) k = words.length - 1;
             if (words[j].equals(target) || words[k].equals(target))
                 return shortestDistance;
         }

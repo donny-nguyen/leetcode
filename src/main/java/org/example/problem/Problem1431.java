@@ -28,6 +28,17 @@ public class Problem1431 {
     }
 
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-        return new ArrayList<>();
+        int maxCandies = candies[0];
+        for (int i = 1; i < candies.length; i++) {
+            if (candies[i] > maxCandies) {
+                maxCandies = candies[i];
+            }
+        }
+        List<Boolean> result = new ArrayList<>();
+        for (int i = 0; i < candies.length; i++) {
+            int newCandies = candies[i] + extraCandies;
+            result.add(newCandies >= maxCandies);
+        }
+        return result;
     }
 }

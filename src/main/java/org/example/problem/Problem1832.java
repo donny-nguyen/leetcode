@@ -1,8 +1,5 @@
 package org.example.problem;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Problem1832 {
     public Problem1832() {
         System.out.println(checkIfPangram("thequickbrownfoxjumpsoverthelazydog") == true);
@@ -10,11 +7,10 @@ public class Problem1832 {
     }
 
     public boolean checkIfPangram(String sentence) {
-        Set<Character> set = new HashSet<>();
-        for(int i = 0; i < sentence.length(); i++) {
-            Character c = sentence.charAt(i);
-            set.add(c);
+        for (char c = 'a'; c <= 'z'; c++) {
+            if (sentence.indexOf(c) < 0)
+                return false;
         }
-        return set.size() == 26;
+        return true;
     }
 }
